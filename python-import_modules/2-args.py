@@ -2,7 +2,7 @@
 from sys import argv
 
 
-def func():
+if __name__ == "__main__":
     argc = len(argv)
 
     if argc == 1:
@@ -13,7 +13,3 @@ def func():
         print("{} arguments:".format(argc - 1))
         for i in range(1, argc):
             print("{}: {}".format(i, argv[i]))
-
-
-if __name__ == "__main__":
-    func()

@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 from sys import argv
 
+print(dir())
 
 def func():
     argc = len(argv)
@@ -12,5 +13,7 @@ def func():
     print(sum)
 
 
-if __name__ == "__main__":
+print(dir())
+
+if __name__ != "__main__":
     func()

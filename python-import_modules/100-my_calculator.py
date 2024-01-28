@@ -20,7 +20,7 @@ def mycalc():
         print("Unknown operator. Available operators: +, -, * and /")
         exit(1)
 
-        print("{} {} {} = {}".format(argv[1], argv[2], argv[3], result))
+    print("{} {} {} = {}".format(argv[1], argv[2], argv[3], result))
 
 
 if __name__ == "__main__":

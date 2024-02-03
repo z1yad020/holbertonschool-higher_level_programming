@@ -13,6 +13,7 @@ class Square:
 
         self.__size = size
 
+
 if __name__ == "__main__":
     """run as main"""
     my_square = Square(3)
@@ -20,11 +21,11 @@ if __name__ == "__main__":
     print(my_square.__dict__)
 
     try:
-            print(my_square.size)
+        print(my_square.size)
     except Exception as e:
-            print(e)
+        print(e)
 
-            try:
-                    print(my_square.__size)
-            except Exception as e:
-                    print(e)
+    try:
+        print(my_square.__size)
+    except Exception as e:
+        print(e)

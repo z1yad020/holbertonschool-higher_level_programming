@@ -1,13 +1,7 @@
 #!/usr/bin/python3
+"""Example Google style docstrilank module, doing nothing"""
+
 
 class Square:
-    """The summary line for a class docstring should fit on one line."""
+    """The summary line for a class should fit on one line."""
     pass
-
-
-
-
-if __name__ == "__main__":
-    my_square = Square()
-    print(type(my_square))
-    print(my_square.__doc__)

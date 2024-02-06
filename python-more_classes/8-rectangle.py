@@ -91,19 +91,3 @@ class Rectangle():
             raise TypeError("rect_2 must be an instance of Rectangle")
 
         return max((rect_1, rect_2), key=lambda x: x.area())
-
-
-if __name__ == "__main__":
-    my_rectangle_1 = Rectangle(8, 4)
-    my_rectangle_2 = Rectangle(4, 8)
-
-    print("my_rectangle_1 is bigger or equal to my_rectangle_2")
-    else:
-        print("my_rectangle_2 is bigger than my_rectangle_1")
-
-    my_rectangle_2.width = 10
-    my_rectangle_2.height = 5
-
-    print("my_rectangle_1 is bigger or equal to my_rectangle_2")
-    else:
-        print("my_rectangle_2 is bigger than my_rectangle_1")

@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 """
 Module of Rectangle
+
+Adding Area and Perimeter
 """
 
 
@@ -38,11 +40,21 @@ class Rectangle():
 
         self.__height = value
 
+    def area(self):
+        return self.__width * self.__height
+
+    def perimeter(self):
+        if 0 in [self.__height, self.__width]:
+            return 0
+
+        return 2 * (self.__height + self.__width)
 
 if __name__ == "__main__":
-    my_rectangle = Rectangle(2, 4)
-    print(my_rectangle.__dict__)
+    my_rectangle = Rectangle(5, 0)
+    print("Area: {} - Perimeter: {}".format(my_rectangle.area(), my_rectangle.perimeter()))
+
+    print("--")
 
     my_rectangle.width = 10
     my_rectangle.height = 3
-    print(my_rectangle.__dict__)
+    print("Area: {} - Perimeter: {}".format(my_rectangle.area(), my_rectangle.perimeter()))

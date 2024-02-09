@@ -3,7 +3,9 @@
 
 
 class MyList(list):
+    """custom action"""
     def print_sorted(self):
+        """sorting"""
         print(sorted(self))
 
 

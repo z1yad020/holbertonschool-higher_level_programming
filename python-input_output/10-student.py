@@ -18,6 +18,6 @@ class Student:
         result = {}
 
         for attr in attrs:
-            if arrt in self.__dict__:
+            if attr in self.__dict__:
                 result[attr] = self.__dict__[attr]
         return result

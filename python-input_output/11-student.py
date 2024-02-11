@@ -14,9 +14,9 @@ class Student:
     def reload_from_json(self, json):
         if not json:
             return
-    self.first_name = json["first_name"]
-    self.last_name = json["last_name"]
-    self.age = json["age"]
+        self.first_name = json["first_name"]
+        self.last_name = json["last_name"]
+        self.age = json["age"]
 
     def to_json(self, attrs=None):
         if attrs is None:
@@ -25,6 +25,6 @@ class Student:
         result = {}
 
         for attr in attrs:
-            if arrt in self.__dict__:
+            if attr in self.__dict__:
                 result[attr] = self.__dict__[attr]
         return result

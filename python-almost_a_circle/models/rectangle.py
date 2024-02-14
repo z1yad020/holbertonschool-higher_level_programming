@@ -18,9 +18,9 @@ class Rectangle(Base):
 
     def update(self, *args):
         """update with *args"""
-        ar = [self.id, self.__width, self.__height, self.__x, self.__y]
-        for i, j in zip(ar, *args):
-            i = j
+        ar = ["self.id", "self.width", "self.height", "self.x", "self.y"]
+        for i, j in zip(ar, args):
+            exec(f"{i} = {j}")
 
     def display(self):
         """display rectangle with default char"""

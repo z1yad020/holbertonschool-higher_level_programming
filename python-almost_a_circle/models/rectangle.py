@@ -4,10 +4,10 @@ Rectangle module
 """
 
 
-import base
+from models.base import Base
 
 
-class Rectangle(base.Base):
+class Rectangle(Base):
     """Rectangle class inherit from Base"""
     def __init__(self, width, height, x=0, y=0, id=None):
         super().__init__(id)

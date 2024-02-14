@@ -21,12 +21,6 @@ class Base:
     def to_json_string(list_dictionaries):
         """JSON is one of the standard formats for sharing data representation.
         JSON string representation of list_dictionaries"""
-        if not list_dictionaries or len(list_dictionaries) == 0:
+        if list_dictionaries is None:
             return "[]"
-
-        s = []
-        for i in list_dictionaries:
-            s.append("[")
-            s.append(json.dumps(i))
-            s.append("]")
-        return "".join(s)
+        return json.dumps(list_dictionaries)

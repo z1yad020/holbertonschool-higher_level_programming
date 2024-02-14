@@ -18,7 +18,7 @@ class Rectangle(Base):
 
     def update(self, *args):
         """update with *args"""
-        ar = [self.id, self.__wight, self.__height, self.__x, self.__y]
+        ar = [self.id, self.__width, self.__height, self.__x, self.__y]
         for i, j in zip(ar, *args):
             i = j
 

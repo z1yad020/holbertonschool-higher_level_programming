@@ -16,8 +16,14 @@ class Rectangle(Base):
         self.x = x
         self.y = y
 
-    def update(self, *args):
-        """update with *args"""
+    def update(self, *args, **kwargs):
+        """update with *args, **kwargs"""
+
+        if not args:
+            for i, j in kwargs.items():
+                exec(f"self.{i} = {j}")
+            return
+
         ar = ["self.id", "self.width", "self.height", "self.x", "self.y"]
         for i, j in zip(ar, args):
             exec(f"{i} = {j}")

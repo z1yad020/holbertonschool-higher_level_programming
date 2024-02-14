@@ -16,6 +16,12 @@ class Rectangle(Base):
         self.x = x
         self.y = y
 
+    def update(self, *args):
+        """update with *args"""
+        ar = [self.id, self.__wight, self.__height, self.__x, self.__y]
+        for i, j in zip(ar, *args):
+            i = j
+
     def display(self):
         """display rectangle with default char"""
         x = "#" * self.__width

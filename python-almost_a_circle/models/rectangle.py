@@ -16,9 +16,18 @@ class Rectangle(Base):
         self.x = x
         self.y = y
 
+    def to_dictionary(self):
+        """dictionary representation"""
+        return {
+                "id": self.id,
+                "width": self.width,
+                "height": self.height,
+                "x": self.x,
+                "y": self.y,
+               }
+
     def update(self, *args, **kwargs):
         """update with *args, **kwargs"""
-
         if not args:
             for i, j in kwargs.items():
                 exec(f"self.{i} = {j}")

@@ -3,10 +3,11 @@
 Rectangle module
 """
 
-from base import Base
+
+import base
 
 
-class Rectangle(Base):
+class Rectangle(base.Base):
     """Rectangle class inherit from Base"""
     def __init__(self, width, height, x=0, y=0, id=None):
         super().__init__(id)

@@ -17,11 +17,13 @@ class Rectangle(Base):
         self.y = y
 
     def display(self):
+        """display rectangle with default char"""
         x = "#" * self.__width
         for _ in range(self.__height):
             print(x)
 
     def area(self):
+        """area of instance"""
         return self.__width * self.__height
 
     @property

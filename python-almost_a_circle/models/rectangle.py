@@ -16,8 +16,34 @@ class Rectangle(Base):
         self.x = x
         self.y = y
 
-    def __getattr__(self, name):
-        return self.__dict__[f"__{name}"]
+    @property
+    def width(self):
+        return self.__width
 
-    def __setattr__(self, name, value):
-        self.__dict__[f"__{name}"] = value
+    @property
+    def height(self):
+        return self.__height
+
+    @property
+    def x(self):
+        return self.__x
+
+    @property
+    def y(self):
+        return self.__y
+
+    @width.setter
+    def width(self, value):
+        self.__width = value
+
+    @height.setter
+    def height(self, value):
+        self.__height = value
+
+    @x.setter
+    def x(self, value):
+        self.__x = value
+
+    @y.setter
+    def y(self, value):
+        self.__y = value

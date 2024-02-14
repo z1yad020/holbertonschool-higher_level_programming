@@ -2,6 +2,7 @@
 """
 Base module
 """
+import json
 
 
 class Base:
@@ -16,20 +17,15 @@ class Base:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
 
+    def to_json_string(list_dictionaries):
+        """JSON is one of the standard formats for sharing data representation.
+        JSON string representation of list_dictionaries"""
+        if not list_dictionaries or len(list_dictionaries) == 0:
+            return "[]"
 
-if __name__ == "__main__":
-
-    b1 = Base()
-    print(b1.id)
-
-    b2 = Base()
-    print(b2.id)
-
-    b3 = Base()
-    print(b3.id)
-
-    b4 = Base(12)
-    print(b4.id)
-
-    b5 = Base()
-    print(b5.id)
+        s = []
+        for i in list_dictionaries:
+            s.append("[")
+            s.append(json.dumps(i))
+            s.append("]")
+        return "".join(s)

@@ -19,8 +19,13 @@ class Rectangle(Base):
     def display(self):
         """display rectangle with default char"""
         x = "#" * self.__width
+
+        for _ in range(self.__y):
+            print()
+
+        cor_x = " " * self.__x
         for _ in range(self.__height):
-            print(x)
+            print(cor_x, x, sep='')
 
     def area(self):
         """area of instance"""

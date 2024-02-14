@@ -28,7 +28,7 @@ class Rectangle(Base):
 
     def __str__(self):
         return f"[Rectangle] ({self.id}) {self.__x}/{self.__y} \
-- {self__width}/{self.__height}"
+- {self.__width}/{self.__height}"
 
     @property
     def width(self):

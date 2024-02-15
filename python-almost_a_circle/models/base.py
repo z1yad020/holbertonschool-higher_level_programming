@@ -17,6 +17,12 @@ class Base:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
 
+    @classmethod
+    def create(cls, **dictionary):
+        dummy = cls(3, 5, 1)
+        dummy.update(**dictionary)
+        return dummy
+
     @staticmethod
     def from_json_string(json_string):
         if json_string is None:

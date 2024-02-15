@@ -17,6 +17,10 @@ class Base:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
 
+    @staticmethod
+    def from_json_string(json_string):
+        return json.loads(json_string)
+
     @classmethod
     def save_to_file(cls, list_objs):
         if list_objs is None:

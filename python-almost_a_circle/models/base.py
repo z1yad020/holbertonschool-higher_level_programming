@@ -18,6 +18,20 @@ class Base:
             self.id = Base.__nb_objects
 
     @classmethod
+    def load_from_file(cls):
+        try:
+            f = open(f"{cls.__name__}.json", "r", encoding="utf-8")
+
+            data = f.read()
+            lt = cls.from_json_string(data)
+
+            return [cls.create(**dictf) for dictf in lt]
+        except FileNotFoundError:
+            return []
+        finally:
+            f.close()
+
+    @classmethod
     def create(cls, **dictionary):
         if cls.__name__ == "Rectangle":
             dummy = cls(3, 5)

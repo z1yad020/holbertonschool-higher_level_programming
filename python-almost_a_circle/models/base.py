@@ -19,7 +19,10 @@ class Base:
 
     @classmethod
     def create(cls, **dictionary):
-        dummy = cls(3, 5)
+        if cls.__name__ == "Rectangle":
+            dummy = cls(3, 5)
+        else:
+            dummy = cls(3)
         dummy.update(**dictionary)
         return dummy
 

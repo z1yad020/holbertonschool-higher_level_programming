@@ -17,6 +17,13 @@ class Base:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
 
+    @classmethod
+    def save_to_file(cls, list_objs):
+        if list_objs is None:
+            list_objs = []
+        with open(f"{cls.__name__}.json", "w", encoding="utf-8") as f:
+            f.write(cls.to_json_string([x.to_dictionary() for x in list_objs]))
+
     @staticmethod
     def to_json_string(list_dictionaries):
         """JSON is one of the standard formats for sharing data representation.

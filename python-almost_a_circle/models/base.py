@@ -24,6 +24,7 @@ class Base:
                 data = f.read()
                 lt = cls.from_json_string(data)
                 return [cls.create(**dictf) for dictf in lt]
+
         except FileNotFoundError:
             return []
 

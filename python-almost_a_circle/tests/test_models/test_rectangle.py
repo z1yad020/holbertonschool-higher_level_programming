@@ -1,12 +1,13 @@
 #!/usr/bin/python3
-"""Test Rectangle model"""
-import unittest
-from models.rectagle import Rectangle
+"""Test for rectangle model"""
 import os
+import unittest
+from io import StringIO
+from unittest.mock import patch
+from models.rectangle import Rectangle
 
 
-class testBase(unittest.TestCase):
-    """test cases for Rectangle"""
+class TestBase(unittest.TestCase):
     def test_rectangle(self):
         r0 = Rectangle(1, 2)
         self.assertEqual(r0.width, 1)
@@ -103,8 +104,8 @@ class testBase(unittest.TestCase):
     def test_to_dictionary(self):
         r1 = Rectangle(3, 2, id=55)
         self.assertEqual(
-            r1.to_dictionary(), {"id": 55, "width": 3,
-                                 "height": 2, "x": 0, "y": 0}
+            r1.to_dictionary(),
+            {"id": 55, "width": 3, "height": 2, "x": 0, "y": 0}
         )
 
     def test_update(self):
@@ -144,8 +145,8 @@ class testBase(unittest.TestCase):
         Rectangle.save_to_file([Rectangle(1, 2, id=13)])
         with open("Rectangle.json", "r") as file:
             self.assertEqual(
-                file.read(), '[{"id": 13, "width": 1, \
-"height": 2, "x": 0, "y": 0}]'
+                file.read(),
+                '[{"id": 13, "width": 1, "height": 2, "x": 0, "y": 0}]'
             )
 
     def test_load_from_file1(self):

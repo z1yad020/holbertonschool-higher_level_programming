@@ -22,9 +22,7 @@ if __name__ == "__main__":
 
     Base.metadata.create_all(engine)
 
-
     states = Session.query(State).all()
-
 
     for row in states:
         print("{}: {}".format(row.id, row.name))

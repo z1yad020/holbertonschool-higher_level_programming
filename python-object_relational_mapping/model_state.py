@@ -10,6 +10,7 @@ from sqlalchemy import Column, Integer, String
 
 Base = sqlalchemy.declarative_base()
 
+
 class State(Base):
     __tablename__ = 'states'
 

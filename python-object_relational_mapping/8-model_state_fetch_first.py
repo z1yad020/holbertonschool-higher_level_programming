@@ -13,7 +13,6 @@ from sqlalchemy.orm import Session
 
 
 if __name__ == '__main__':
-    """nameee"""
 
     engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format(
              sys.argv[1],
@@ -22,8 +21,6 @@ if __name__ == '__main__':
              pool_pre_ping=True)
 
     session = Session(engine)
-
-    Base.metadata.create_all(engine)
 
     f = session.query(State).order_by(State.id).first()
 

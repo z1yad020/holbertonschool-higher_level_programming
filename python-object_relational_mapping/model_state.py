@@ -8,7 +8,7 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import Column, Integer, String
 
 
-Base = sqlalchemy.declarative_base()
+Base = declarative_base()
 
 
 class State(Base):

@@ -13,6 +13,8 @@ from sqlalchemy.orm import Session
 
 
 if __name__ == '__main__':
+    """nameee"""
+
     engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format(
              sys.argv[1],
              sys.argv[2],
@@ -23,7 +25,7 @@ if __name__ == '__main__':
 
     Base.metadata.create_all(engine)
 
-    f = session.query(State).first()
+    f = session.query(State).order_by(State.id).first()
 
     if f is not None:
         print("{}. {}".format(f.id, f.name))

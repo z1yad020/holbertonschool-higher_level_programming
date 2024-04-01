@@ -22,8 +22,6 @@ if __name__ == '__main__':
 
     session = Session(engine)
 
-    n = State(name='Louisiana')
-    session.add(n)
-    session.commit()
+    session.query(State).filter_by(id=2).update({"name": "New Mexico"})
 
-    print(r.id)
+    session.commit()

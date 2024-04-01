@@ -22,7 +22,8 @@ if __name__ == '__main__':
 
     session = Session(engine)
 
-    f = session.query(State).filter(State.name.ilike("%a%")).order_by(State.id).all()
+    f = session.query(State).filter(State.name.ilike("%a%"))\
+        .order_by(State.id).all()
 
     for r in f:
         print("{}: {}".format(r.id, r.name))
